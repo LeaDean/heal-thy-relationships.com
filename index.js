@@ -39,17 +39,17 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // Orbit
 (function () {
     const ITEMS = [
-        { label: 'Energy',     angle: 0        },
-        { label: 'Focus',      angle: 32.7272  },
-        { label: 'Purpose',    angle: 65.4544  },
-        { label: 'Strength',   angle: 98.1816  },
-        { label: 'Peace',      angle: 130.909  },
-        { label: 'Clarity',    angle: 163.636  },
-        { label: 'Harmony',    angle: 196.363  },
-        { label: 'Vitality',   angle: 229.090  },
-        { label: 'Joy',        angle: 261.818  },
-        { label: 'Growth',     angle: 294.545  },
-        { label: 'Challenges', angle: 327.272  },
+        { label: 'Energy',     angle: 0,       preview: 'Reconnect with the vitality that is your natural state.'              },
+        { label: 'Focus',      angle: 32.7272, preview: 'A clear mind is the foundation of a meaningful life.'                 },
+        { label: 'Purpose',    angle: 65.4544, preview: 'The question beneath all questions: why am I here?'                   },
+        { label: 'Strength',   angle: 98.1816, preview: 'True strength is knowing when to soften, and when to hold firm.'      },
+        { label: 'Peace',      angle: 130.909, preview: 'Peace is not the absence of difficulty — it is a way of meeting it.'  },
+        { label: 'Clarity',    angle: 163.636, preview: 'When the noise settles, you already know what is true.'               },
+        { label: 'Harmony',    angle: 196.363, preview: 'Harmony is the art of holding difference without discord.'            },
+        { label: 'Vitality',   angle: 229.090, preview: 'Aliveness is your birthright — let\'s find what\'s dimming it.'      },
+        { label: 'Joy',        angle: 261.818, preview: 'Joy is not frivolous. It is one of the most reliable compasses we have.' },
+        { label: 'Growth',     angle: 294.545, preview: 'Growth is rarely comfortable — and almost always worth it.'           },
+        { label: 'Challenges', angle: 327.272, preview: 'The hardest moments carry the seeds of our deepest becoming.'         },
     ];
 
     const DURATION = 36;
@@ -73,22 +73,25 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         outer.appendChild(inner);
         wrap.appendChild(outer);
 
-        outer.addEventListener('mouseenter', () => {
-            centerText.textContent = item.label;
+        function showPreview() {
+            centerText.innerHTML =
+                '<span class="orb-center-label">' + item.label + '</span>' +
+                '<span class="orb-center-preview">' + item.preview + '</span>';
             centerText.classList.add('show');
-        });
+        }
+
+        outer.addEventListener('mouseenter', showPreview);
         outer.addEventListener('mouseleave', () => centerText.classList.remove('show'));
         outer.addEventListener('click', () => {
             window.location.href = 'orb.html?topic=' + encodeURIComponent(item.label);
         });
         outer.addEventListener('touchstart', (e) => {
             e.preventDefault();
-            centerText.textContent = item.label;
-            centerText.classList.add('show');
+            showPreview();
             setTimeout(() => {
                 centerText.classList.remove('show');
                 window.location.href = 'orb.html?topic=' + encodeURIComponent(item.label);
-            }, 600);
+            }, 900);
         }, { passive: false });
     });
 
