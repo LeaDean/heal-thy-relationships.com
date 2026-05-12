@@ -18,7 +18,7 @@
         'knowledge/faqs.txt',
     ];
 
-    const API_KEY = 'YOUR_API_KEY_HERE';
+    const API_KEY = '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';
 
     /* ── Styles ─────────────────────────────────────────────────── */
     const css = `
