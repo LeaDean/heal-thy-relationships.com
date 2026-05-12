@@ -18,7 +18,7 @@
         'knowledge/faqs.txt',
     ];
 
-    const API_KEY = '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';
+    const API_KEY = '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';
 
     /* ── Styles ─────────────────────────────────────────────────── */
     const css = `
