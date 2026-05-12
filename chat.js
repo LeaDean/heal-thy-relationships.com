@@ -18,8 +18,7 @@
         'knowledge/faqs.txt',
     ];
 
-    const API_KEY = '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';
-
+    const API_KEY = '';
     /* ── Styles ─────────────────────────────────────────────────── */
     const css = `
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
@@ -617,14 +616,11 @@ ${knowledgeBase}
         }
 
         try {
-            const res = await fetch('https://api.anthropic.com/v1/messages', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-api-key': API_KEY,
-                    'anthropic-version': '2023-06-01',
-                    'anthropic-dangerous-direct-browser-access': 'true',
-                },
+            const res = await fetch('https://heal-thy-chat.leadeanguitar.workers.dev', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
                 body: JSON.stringify({
                     model: 'claude-sonnet-4-20250514',
                     max_tokens: 1000,
