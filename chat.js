@@ -616,23 +616,25 @@ ${knowledgeBase}
         }
 
         try {
-            const res = await fetch('https://heal-thy-chat.leadeanguitar.workers.dev', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+            const res = await fetch('http://46.225.3.114:11434/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({
-                    model: 'claude-sonnet-4-20250514',
-                    max_tokens: 1000,
-                    system: buildSystemPrompt(),
-                    messages: history,
+                    model: 'llama3.1',
+                    stream: false,
+                    messages: [
+                        { role: 'system', content: buildSystemPrompt() },
+                        ...history,
+                    ],
                 }),
             });
 
             const data = await res.json();
             removeTyping();
 
-            const reply = data.content?.find(b => b.type === 'text')?.text
+            const reply = data.message?.content
                 || "I'm so sorry — something went quiet on my end. Please try again in a moment.";
 
             history.push({ role: 'assistant', content: reply });
