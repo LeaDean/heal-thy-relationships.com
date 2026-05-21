@@ -616,7 +616,7 @@ ${knowledgeBase}
         }
 
         try {
-            const res = await fetch('http://46.225.3.114:11434/api/chat', {
+            const res = await fetch('https://divine-rice-0a7d.leadeanguitar.workers.dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
