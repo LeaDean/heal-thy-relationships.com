@@ -622,7 +622,7 @@ ${knowledgeBase}
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    model: 'llama3.1',
+                    model: 'llama3.2',
                     stream: false,
                     messages: [
                         { role: 'system', content: buildSystemPrompt() },
