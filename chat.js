@@ -616,16 +616,16 @@ ${knowledgeBase}
         }
 
         try {
-            const res = await fetch('https://divine-rice-0a7d.leadeanguitar.workers.dev', {
+            const res = await fetch('https://heal-thy-chat.leadeanguitar.workers.dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    model: 'llama3.2',
-                    stream: false,
+                    model: 'claude-sonnet-4-20250514',
+                    max_tokens: 1000,
+                    system: buildSystemPrompt(),
                     messages: [
-                        { role: 'system', content: buildSystemPrompt() },
                         ...history,
                     ],
                 }),
@@ -634,7 +634,7 @@ ${knowledgeBase}
             const data = await res.json();
             removeTyping();
 
-            const reply = data.message?.content
+            const reply = data.content?.find(b => b.type === 'text')?.text
                 || "I'm so sorry — something went quiet on my end. Please try again in a moment.";
 
             history.push({ role: 'assistant', content: reply });
