@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal-thy-relationships — Topics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-brand">Heal-thy-relationships</a>
+        <a href="index.html" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M10 12L6 8l4-4"/>
+            </svg>
+            Back
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="orb-hero">
+        <div class="hero-orb-bg"></div>
+        <div class="orb-hero-inner container">
+            <p class="orb-topic-label fade-in" id="heroLabel">RELATIONSHIP GUIDANCE</p>
+            <h1 class="orb-title fade-in" id="heroTitle" style="transition-delay:0.1s">—</h1>
+            <p class="orb-tagline fade-in" id="heroTagline" style="transition-delay:0.2s"></p>
+            <div class="orb-badges fade-in" id="heroBadges" style="transition-delay:0.3s"></div>
+            <a href="index.html#book" class="btn-primary fade-in" style="transition-delay:0.4s">Begin This Journey</a>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="content-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="fade-in">
+                    <p class="section-label" id="introLabel">UNDERSTANDING</p>
+                    <h2 class="section-title" id="introTitle">What This Means For You</h2>
+                    <div class="divider"></div>
+                    <div class="intro-text" id="introText"></div>
+                </div>
+                <div class="fade-in" style="transition-delay:0.2s;">
+                    <div class="pull-quote">
+                        <blockquote id="quoteText"></blockquote>
+                        <cite id="quoteCite">— Heal-thy-relationships Guidance</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="content-section alt">
+        <div class="container" style="text-align:center;">
+            <div class="fade-in">
+                <h3 class="section-title" id="ctaTitle" style="margin-bottom:1.2rem;">Ready to explore this together?</h3>
+                <p style="font-size:1.1rem; color:var(--text-dim); margin-bottom:2.8rem;" id="ctaText"></p>
+                <a href="index.html#book" class="btn-primary">Book a Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore other orbs -->
+    <section class="orb-nav-section" style="background:var(--bg-mid); padding: clamp(72px,10vw,130px) 0;">
+        <div class="container">
+            <div class="fade-in">
+                <p class="section-label">EXPLORE MORE</p>
+                <h2 class="section-title">Other Areas of Growth</h2>
+                <div class="divider"></div>
+                <div class="orb-nav-grid" id="orbNavGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
+                <a href="index.html" style="font-size:1.55rem; background:linear-gradient(90deg,var(--cool),var(--cool-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-decoration:none;">Heal-thy-relationships</a>
+                <span style="color:var(--text-muted);">© 2026 • Guildford, England</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
